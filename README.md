@@ -1,35 +1,21 @@
+# Data Modeling with Postgres:
 
+In this project I have created a database sparkifydb from an app called Sparkify. The main goal of this databse is to create a star schema that would help the analysis team to run queries that leads to answer your question and find insights.
 
-Discuss the purpose of this database in the context of the startup, Sparkify, and their analytical goals.
-
-Data Modiling with postgress:
-
-
-
-
-State and justify your database schema design and ETL pipeline.
-[Optional] Provide example queries and results for song play analysis.
-
-
-
-
-
-
-
-
-
+Build ETL Pipeline:
+First will create tables by runing create_tables.py file, and once the tables ready, run the etl.py file, this file will extartc the json files from the working directory, transform datatype and finaly load the data into the star schema.
 
 Refrence:
 
 -Change data type of a specific column of a pandas dataframe
-    https://stackoverflow.com/questions/41590884/change-data-type-of-a-specific-column-of-a-pandas-dataframe
-  * solve the OutOfBoundsDatetime:
-    https://github.com/pandas-dev/pandas/issues/10987
+https://stackoverflow.com/questions/41590884/change-data-type-of-a-specific-column-of-a-pandas-dataframe
 
+- solve the OutOfBoundsDatetime:
+  https://github.com/pandas-dev/pandas/issues/10987
 
 -Python datetime fromtimestamp yielding valueerror year out of range [duplicate]
-    https://stackoverflow.com/questions/10286224/javascript-timestamp-to-python-datetime-conversion
-    https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html
+https://stackoverflow.com/questions/10286224/javascript-timestamp-to-python-datetime-conversion
+https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html
 
 -Datetime converting:
-    https://www.geeksforgeeks.org/python-pandas-to_datetime/
+https://www.geeksforgeeks.org/python-pandas-to_datetime/
