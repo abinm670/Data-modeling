@@ -72,9 +72,7 @@ def process_data(cur, conn, filepath, func):
     # get all files matching extension from directory
     all_files = []
     for root, dirs, files in os.walk(filepath):
-        # faster method to match pathname
-        # join - This method concatenates various path
-        # components with exactly one directory separator (‘/’)
+
         files = glob.glob(os.path.join(root, '*.json'))
         for f in files:
             # get the absolut path of file.json
@@ -88,8 +86,7 @@ def process_data(cur, conn, filepath, func):
     for i, datafile in enumerate(all_files, 1):
         func(cur, datafile)
         conn.commit()
-
-        # print('{} files processed out of : {}/{}'.format(i, num_files, datafile))
+        print('{} files processed out of : {}/{}'.format(i, num_files, datafile))
 
 
 def main():
