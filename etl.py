@@ -6,7 +6,7 @@ from sql_queries import *
 import sys
 import datetime
 
-
+'''Transform Load function'''
 def process_song_file(cur, filepath):
     # open song file
     df = pd.read_json(filepath, lines=True)
@@ -21,7 +21,7 @@ def process_song_file(cur, filepath):
                       'artist_location', 'artist_latitude', 'artist_longitude']].values[0].tolist()
     cur.execute(artist_table_insert, artist_data)
 
-
+''' Transform Load functions '''
 def process_log_file(cur, filepath):
     # open log file
     df = pd.read_json(filepath, lines=True)
@@ -67,12 +67,14 @@ def process_log_file(cur, filepath):
                          row.sessionId, row.location, row.userAgent)
         cur.execute(songplay_table_insert, songplay_data)
 
-
+''' This function will collect JSON files and save it to a variable.
+loop inside the variable and pass each file to the Transform Load functions.   '''
 def process_data(cur, conn, filepath, func):
     # get all files matching extension from directory
     all_files = []
     for root, dirs, files in os.walk(filepath):
 
+        ''' collect json files '''
         files = glob.glob(os.path.join(root, '*.json'))
         for f in files:
             # get the absolut path of file.json
@@ -88,7 +90,12 @@ def process_data(cur, conn, filepath, func):
         conn.commit()
         print('{} files processed out of : {}/{}'.format(i, num_files, datafile))
 
-
+'''
+The main function:
+- connect to the database, create a cursor object to interact with the database.
+- call process_data method to process and collect data from two different paths.
+- calling a function inside a function. 
+'''
 def main():
     conn = psycopg2.connect(
         "host=127.0.0.1 dbname=sparkifydb user=student password=student")
