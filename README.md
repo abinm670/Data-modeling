@@ -12,23 +12,23 @@ First will create tables by runing create_tables.py file, and once the tables re
 
 # Refrence:
 
-### Change data type of a specific column of a pandas dataframe
- https://stackoverflow.com/questions/41590884/#### change-data-type-of-a-specific-column-of-a-pandas-dataframe
+#### Change data type of a specific column of a pandas dataframe
+https://stackoverflow.com/questions/41590884/#### change-data-type-of-a-specific-column-of-a-pandas-dataframe
 
-### solve the OutOfBoundsDatetime:
+#### solve the OutOfBoundsDatetime:
 https://github.com/pandas-dev/pandas/issues/10987
 
-### Python datetime fromtimestamp yielding valueerror year out of range [duplicate]
+#### Python datetime fromtimestamp yielding valueerror year out of range [duplicate]
 https://stackoverflow.com/questions/10286224/javascript-timestamp-to-python-datetime-conversion
 https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html
 
-### Datetime converting:
+#### Datetime converting:
 https://www.geeksforgeeks.org/python-pandas-to_datetime/
 
 
-# Run the Project:
-#### python create_tables.py
-#### python etl.py
+### Run the Project:
+* python create_tables.py
+* python etl.py
 
-# Test the project:
-#### test.py 
+### Test the project:
+test.py 
