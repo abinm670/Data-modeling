@@ -1,8 +1,36 @@
 # Data Modeling with Postgres:
-Build a database from the Sparkify app. The main goal of this databse is to create a star schema that would help the analysis team to run queries that leads to answer your question and find insights.
+Build a database from the Sparkify app. Define fact and dimension tables for a star schema for a particular analytic focus, and write an ETL pipeline that transfers data from files in two local directories into these tables in Postgres using Python and SQL which would help the analysis team to run queries that leads to answer questions and find insights.
 
-### Project Repository files:
-Create_tables.py file will create a sparkifydb database and import the sql_queries.py to create the fact table and four dimension tables. Finally, the test file will check for if the data exist in the songs table.
+
+# Project Template
+
+#### Project Steps
+
+* Create Tables
+Run create_tables.py to create your database and tables.
+Run test.ipynb to confirm the creation of your tables with the correct columns. 
+* Build ETL Processes
+Run create_tables.py before running etl.py to reset your tables. Run test.ipynb to confirm your records were successfully inserted into each table.
+
+***  NOTE: You will not be able to run test.py, etl.py, or etl.py until you have run create_tables.py at least once to create the sparkifydb database, which these other files connect to.
+
+
+# Schema for Song Play Analysis
+Using the song and log datasets, you'll need to create a star schema optimized for queries on song play analysis. This includes the following tables.
+
+#### Fact Table
+songplays - records in log data associated with song plays i.e. records with page NextSong
+songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent
+#### Dimension Tables
+users - users in the app
+user_id, first_name, last_name, gender, level
+songs - songs in music database
+song_id, title, artist_id, year, duration
+artists - artists in music database
+artist_id, name, location, latitude, longitude
+time - timestamps of records in songplays broken down into specific units
+start_time, hour, day, week, month, year, weekday
+
 
 
 ### Build ETL Pipeline:
