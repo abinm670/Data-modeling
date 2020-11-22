@@ -9,6 +9,16 @@ Create_tables.py file will create a sparkifydb database and import the sql_queri
 First will create tables by runing create_tables.py file, and once the tables ready, run the etl.py file, this file will extartc the json files from the working directory, transform datatype and finaly load the data into the star schema.
 
 
+### Run the Project:
+* python create_tables.py
+* python etl.py
+
+### Test the project:
+test.py 
+
+
+
+
 
 # Refrence:
 
@@ -26,9 +36,4 @@ https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.ht
 https://www.geeksforgeeks.org/python-pandas-to_datetime/
 
 
-### Run the Project:
-* python create_tables.py
-* python etl.py
 
-### Test the project:
-test.py 
